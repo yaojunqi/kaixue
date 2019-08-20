@@ -24,34 +24,36 @@ class BasicOneActivity : AppCompatActivity() {
         test(mTvHomework)
 
         test(imgLaunch)
+        test(null)
     }
 
     private fun setBg(view: View?) {
         view?.setBackgroundColor(Color.YELLOW)
     }
 
-    private fun test(view: View) {
+    private fun test(view: View?) {
         try {
             val textView = view as? TextView
-            Log.d(TAG, "${view.javaClass.canonicalName} 通过 as? 转换为 TextView，是否为空 = ${textView == null}")
+            Log.d(TAG, "${view?.javaClass?.canonicalName} 通过 as? 转换为 TextView，是否为空 = ${textView == null}")
         } catch (e: Exception) {
-            Log.d(TAG, "${view.javaClass.canonicalName} 通过 as? 转换为 TextView，转换出现异常 ${e}")
+            Log.d(TAG, "${view?.javaClass?.canonicalName} 通过 as? 转换为 TextView，转换出现异常 ${e}")
             e.printStackTrace()
         }
         try {
             val textView = view as TextView?
-            Log.d(TAG, "${view.javaClass.canonicalName} 通过 as TextView? 转换为 TextView，是否为空 = ${textView == null}")
+            Log.d(TAG, "${view?.javaClass?.canonicalName} 通过 as TextView? 转换为 TextView，是否为空 = ${textView == null}")
         } catch (e: Exception) {
-            Log.d(TAG, "${view.javaClass.canonicalName} 通过 as TextView? 转换为 TextView，转换出现异常 ${e}")
+            Log.d(TAG, "${view?.javaClass?.canonicalName} 通过 as TextView? 转换为 TextView，转换出现异常 ${e}")
             e.printStackTrace()
         }
         try {
             val textView = view as? TextView
-            Log.d(TAG, "${view.javaClass.canonicalName} 通过 as? TextView? 转换为 TextView，是否为空 = ${textView == null}")
+            Log.d(TAG, "${view?.javaClass?.canonicalName} 通过 as? TextView? 转换为 TextView，是否为空 = ${textView == null}")
         } catch (e: Exception) {
-            Log.d(TAG, "${view.javaClass.canonicalName} 通过 as? TextView? 转换为 TextView，转换出现异常 ${e}")
+            Log.d(TAG, "${view?.javaClass?.canonicalName} 通过 as? TextView? 转换为 TextView，转换出现异常 ${e}")
             e.printStackTrace()
         }
+        Log.d(TAG,"========================分割线=========================")
     }
 
     // 可以修改
